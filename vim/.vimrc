@@ -100,3 +100,12 @@ set incsearch
 set hlsearch
 
 set splitbelow
+
+" make find to use ctrl p
+map <C-p> :find 
+
+" set wordwrap close to 80 char
+set tw=80
+
+" set soft wrap, display it multiple lines 
+set wrap linebreak nolist
