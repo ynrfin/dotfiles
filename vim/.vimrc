@@ -30,6 +30,13 @@ Plugin 'altercation/Vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path=[]
+let g:ycm_extra_conf_vim_data = [
+    \ 'g:ycm_python_interpreter_path',
+    \ 'g:ycm_python_sys_path'
+\]
+let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " Ultisnip for snippet
 Plugin 'SirVer/ultisnips'
@@ -39,9 +46,9 @@ Plugin 'SirVer/ultisnips'
 
 " Ultisnips trigger config
 let g:UltisnipsExpandTrigger="<C-j>"
-let g:UltisnipsJumpForwardTrigger="<C-j>"
+let g:UltisnipsJumpForwardTrigger="<tab>"
 " this is not working yet
-let g:UltisnipsJumpBackwardTrigger='<C-k>'
+let g:UltisnipsJumpBackwardTrigger='<s-tab>'
 
 " Split windows vertically
  let g:UltisnipsEditSplit="vertical"
