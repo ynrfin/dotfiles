@@ -56,6 +56,8 @@ let g:UltisnipsJumpBackwardTrigger='<s-tab>'
 Plugin 'scrooloose/nerdtree'
 map <F3> :NERDTreeToggle<CR>
 
+Plugin 'majutsushi/tagbar'
+map <F8> :TagbarToggle<CR>
 
 " All your plugins must be added before the following line
 call vundle#end()
