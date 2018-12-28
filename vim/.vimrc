@@ -103,8 +103,6 @@ set incsearch
 " highlight matches
 set hlsearch
 
-set splitbelow
-
 " make find to use ctrl p
 map <C-p> :find 
 
@@ -113,3 +111,9 @@ set tw=80
 
 " set soft wrap, display it multiple lines 
 set wrap linebreak nolist
+
+" set new split buffer to the right of current one
+set splitright
+
+" set vsplit to below
+set splitbelow
