@@ -45,13 +45,15 @@ Plugin 'SirVer/ultisnips'
  Plugin 'honza/vim-snippets'
 
 " Ultisnips trigger config
-let g:UltisnipsExpandTrigger="<C-j>"
-let g:UltisnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 " this is not working yet
-let g:UltisnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 " Split windows vertically
- let g:UltisnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/UltiSnips']
 
 Plugin 'scrooloose/nerdtree'
 map <F3> :NERDTreeToggle<CR>
