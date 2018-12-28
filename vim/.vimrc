@@ -61,6 +61,12 @@ map <F3> :NERDTreeToggle<CR>
 Plugin 'majutsushi/tagbar'
 map <F8> :TagbarToggle<CR>
 
+Plugin 'junegunn/goyo.git'
+
+Plugin 'vimwiki/vimwiki'
+
+Plugin 'shawncplus/phpcomplete.vim'
+
 " All your plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
