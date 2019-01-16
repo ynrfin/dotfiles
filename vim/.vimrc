@@ -67,13 +67,15 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'shawncplus/phpcomplete.vim'
 
+Plugin 'morhetz/gruvbox'
+
 " All your plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " set line number
 set number
@@ -123,3 +125,7 @@ set splitright
 
 " set vsplit to below
 set splitbelow
+
+" set case insensitive on search
+set ignorecase
+set smartcase
