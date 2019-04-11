@@ -190,3 +190,4 @@ bar {
 ## screenshot
 bindsym --release Print exec gnome-screenshot -a
 
+new_window 1pixel
