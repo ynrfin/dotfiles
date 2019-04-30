@@ -33,6 +33,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# Open urxvt
+#bindsym $mod+Return exec urxvt
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -95,8 +98,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1:Browser"
+set $ws2 "2:Terminal"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -162,6 +165,21 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background          text                   indicator
+client.focused          $bg-color           $bg-color           $text-color            #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color   #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color   #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color            #00ff00
+
+hide_edge_borders both
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -190,4 +208,6 @@ bar {
 ## screenshot
 bindsym --release Print exec gnome-screenshot -a
 
+# Set border 1 pixel to remove title
 new_window 1pixel
+
