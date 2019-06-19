@@ -89,12 +89,6 @@ set number
 " enable backspace to delete fist line and go to previous line
 set backspace=2
 
-" set powerline fonts
-let g:airline_powerline_fonts=1
-" Set vim-airline theme
-let g:airline_theme='deus'
-let g:airline_solarized_bg='dark'
-
 " Vimwiki
 let wiki_1 = {}
 let wiki_1.syntax = 'markdown'
