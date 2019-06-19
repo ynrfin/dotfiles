@@ -131,10 +131,10 @@ set hlsearch
 map <C-p> :find 
 
 " set wordwrap close to 80 char
-set tw=80
+" set tw=80
 
 " set soft wrap, display it multiple lines 
-set wrap linebreak nolist
+" set wrap linebreak nolist
 
 " set new split buffer to the right of current one
 set splitright
