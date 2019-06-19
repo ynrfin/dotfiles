@@ -59,11 +59,12 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/UltiSnips']
 
 Plugin 'scrooloose/nerdtree'
 map <F3> :NERDTreeToggle<CR>
+map <S-F3> :NERDTreeRefreshRoot<CR>
 
 Plugin 'majutsushi/tagbar'
 map <F8> :TagbarToggle<CR>
 
-Plugin 'junegunn/goyo.git'
+Plugin 'junegunn/goyo.vim'
 
 Plugin 'vimwiki/vimwiki'
 
