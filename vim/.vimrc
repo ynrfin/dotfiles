@@ -29,33 +29,15 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/Vim-colors-solarized'
 
 " YCM for code completion
+" Change with shougo/deopelete
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_python_interpreter_path = ''
-let g:ycm_python_sys_path=[]
-let g:ycm_extra_conf_vim_data = [
-    \ 'g:ycm_python_interpreter_path',
-    \ 'g:ycm_python_sys_path'
-\]
-let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " Ultisnip for snippet
-Plugin 'SirVer/ultisnips'
+ Plugin 'SirVer/ultisnips'
 
 " Snippet collection from Ultisnips example(recomendation)
  Plugin 'honza/vim-snippets'
 
-" Ultisnips trigger config
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-" this is not working yet
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-
-" Split windows vertically
-let g:UltiSnipsEditSplit="vertical"
-
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/UltiSnips']
 
 Plugin 'scrooloose/nerdtree'
 map <F3> :NERDTreeToggle<CR>
@@ -74,6 +56,28 @@ Plugin 'morhetz/gruvbox'
 
 " All your plugins must be added before the following line
 call vundle#end()
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path=[]
+let g:ycm_extra_conf_vim_data = [
+    \ 'g:ycm_python_interpreter_path',
+    \ 'g:ycm_python_sys_path'
+\]
+let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
+
+" Ultisnips trigger config
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+" this is not working yet
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+
+" Split windows vertically
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/UltiSnips']
+
 filetype plugin indent on
 
 syntax enable
