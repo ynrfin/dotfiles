@@ -20,6 +20,9 @@ Plugin 'tpope/vim-fugitive'
 " auto close bracket
 Plugin 'jiangmiao/auto-pairs'
 
+" make surrounding words
+Plugin 'tpope/vim-surround' 
+
 " vim plugins for theming
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
