@@ -24,8 +24,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround' 
 
 " vim plugins for theming
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'altercation/Vim-colors-solarized'
 
