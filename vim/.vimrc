@@ -49,6 +49,10 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'morhetz/gruvbox'
 
+Plugin 'neoclide/coc.nvim'
+
+Plugin 'liuchengxu/vista.vim'
+
 " All your plugins must be added before the following line
 call vundle#end()
 
