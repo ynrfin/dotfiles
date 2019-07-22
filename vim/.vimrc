@@ -35,6 +35,7 @@ Plugin 'altercation/Vim-colors-solarized'
 " Snippet collection from Ultisnips example(recomendation)
 " Plugin 'honza/vim-snippets'
 
+Plugin 'Yggdroot/LeaderF'
 
 Plugin 'scrooloose/nerdtree'
 map <F3> :NERDTreeToggle<CR>
@@ -52,6 +53,10 @@ Plugin 'morhetz/gruvbox'
 Plugin 'neoclide/coc.nvim'
 
 Plugin 'liuchengxu/vista.vim'
+
+" Markdown folding
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All your plugins must be added before the following line
 call vundle#end()
@@ -107,7 +112,7 @@ set incsearch
 set hlsearch
 
 " make find to use ctrl p
-map <C-p> :find 
+map <C-p> :Leaderf 
 
 " set wordwrap close to 80 char
 " set tw=80
@@ -124,3 +129,5 @@ set splitbelow
 " set case insensitive on search
 set ignorecase
 set smartcase
+
+let g:markdown_folding=3
