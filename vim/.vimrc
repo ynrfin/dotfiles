@@ -30,10 +30,10 @@ Plugin 'altercation/Vim-colors-solarized'
 
 
 " Ultisnip for snippet
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 " Snippet collection from Ultisnips example(recomendation)
-" Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 Plugin 'Yggdroot/LeaderF'
 
