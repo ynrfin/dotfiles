@@ -112,7 +112,7 @@ set incsearch
 set hlsearch
 
 " make find to use ctrl p
-map <C-p> :Leaderf 
+map <C-p> :Leaderf file<CR>
 
 " set wordwrap close to 80 char
 " set tw=80
