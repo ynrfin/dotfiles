@@ -131,3 +131,9 @@ set ignorecase
 set smartcase
 
 let g:markdown_folding=3
+
+" folding settings
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
