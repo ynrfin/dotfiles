@@ -22,3 +22,25 @@ or use manual link for precision
 ## Index
 What is contained in this repo:
 - Vim configuration `.vimrc`
+
+# How To Install Vim
+
+### 1. Link the vimrc & init.vim
+
+vimrc to -> `~/.vimrc`
+
+init.vim to -> `~/.config/nvim/.init.vim`
+
+### 3. Clone vundle
+
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+### 4. Install npm (if not already installed)
+
+`pacman -S npm`
+
+### 5. Install something on coc
+
+`:call coc#util#install()`
+
+done
