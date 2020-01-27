@@ -30,7 +30,7 @@ Plugin 'altercation/Vim-colors-solarized'
 
 
 " Ultisnip for snippet
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " Snippet collection from Ultisnips example(recomendation)
 Plugin 'honza/vim-snippets'
@@ -137,3 +137,6 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" try set python 3 provider
+let g:python3_host_prog = '/usr/bin/python'
