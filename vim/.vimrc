@@ -50,7 +50,7 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'morhetz/gruvbox'
 
-Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plugin 'liuchengxu/vista.vim'
 
