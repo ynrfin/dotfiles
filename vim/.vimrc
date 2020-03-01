@@ -32,14 +32,14 @@ Plugin 'altercation/Vim-colors-solarized'
 " Ultisnip for snippet
 " Plugin 'SirVer/ultisnips'
 
-" Snippet collection from Ultisnips example(recomendation)
+"Plugin 'davidhalter/jedi-vim'
+
+"" Snippet collection from Ultisnips example(recomendation)
 Plugin 'honza/vim-snippets'
 
 Plugin 'Yggdroot/LeaderF'
 
 Plugin 'scrooloose/nerdtree'
-map <F3> :NERDTreeToggle<CR>
-map <S-F3> :NERDTreeRefreshRoot<CR>
 
 " Plugin 'majutsushi/tagbar'
 " map <F8> :TagbarToggle<CR>
@@ -61,6 +61,10 @@ Plugin 'plasticboy/vim-markdown'
 " All your plugins must be added before the following line
 call vundle#end()
 
+map <F3> :NERDTreeToggle<CR>
+map <S-F3> :NERDTreeRefreshRoot<CR>
+
+map <F8> :Vista<CR>
 
 " Ultisnips trigger config
 let g:UltiSnipsExpandTrigger="<C-j>"
