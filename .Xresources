@@ -55,12 +55,12 @@ XTerm*selectToClipboard: true
 *.color15:      #fdf6e3
 
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: Maia-Cursor
 Xcursor.size:                     0
 
 !URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 !URxvt.font:                       xft:Sauce\ Code\ Pro\ Nerd\ Font\ Mono
-URxvt.font:                       xft:Inconsolata
+URxvt.font:                       xft:FiraCode\ Nerd\ Font\ Mono:size=10,xft:Siji:size=10
 URxvt.letterSpace:  0
 
 ! alternative font settings with 'terminus':
