@@ -1,3 +1,4 @@
 {
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "phpls.path":"/home/yanuar/.local/bin/intelephense"
 }
