@@ -110,6 +110,7 @@ Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'jwalton512/vim-blade'
 Plugin 'mattn/emmet-vim'
+Plugin 'Yggdroot/indentLine'
 
 " All your plugins must be added before the following line
 call vundle#end()
@@ -152,6 +153,10 @@ let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
 "make find to use ctrl p
 map <C-p> :Leaderf file<CR>
+
+" setting for yggdroot/indentline
+let g:indentLine_setColors=0
+let g:indentLine_char='┆'
 
 " Remove trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
