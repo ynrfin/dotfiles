@@ -60,7 +60,7 @@ Xcursor.size:                     0
 
 !URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 !URxvt.font:                       xft:Sauce\ Code\ Pro\ Nerd\ Font\ Mono
-URxvt.font:                       xft:FiraCode\ Nerd\ Font\ Mono:size=10,xft:Siji:size=10
+URxvt.font:                       xft:FiraCode\ Nerd\ Font\ Mono:size=10,xft:Siji,xft:Font\ Awesome
 URxvt.letterSpace:  0
 
 ! alternative font settings with 'terminus':
