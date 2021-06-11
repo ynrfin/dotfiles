@@ -6,6 +6,10 @@ set nocompatible
 " vundle setting example make this off
 filetype off
 
+" Set leader to space, default \
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 set encoding=utf-8
 
 " set visual tabs to have 4 spaces
