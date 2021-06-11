@@ -93,7 +93,10 @@ Plugin 'altercation/Vim-colors-solarized'
 "" Snippet collection from Ultisnips example(recomendation)
 Plugin 'honza/vim-snippets'
 
-Plugin 'Yggdroot/LeaderF'
+"Plugin 'Yggdroot/LeaderF'
+Plugin 'nvim-lua/popup.nvim'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -157,9 +160,24 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 let g:NERDTreeDirArrowExpandable = 'ﲖ'
 let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
+" Set vim-markdown conceal mode to no, it is hard to edit when the tilde is
+" concealed
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 "make find to use ctrl p
-map <C-p> :Leaderf file<CR>
+"map <C-p> :Leaderf file<CR>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " setting for yggdroot/indentline
 let g:indentLine_setColors=0
