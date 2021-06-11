@@ -106,8 +106,9 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'morhetz/gruvbox'
 
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-
+"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neovim/nvim-lspconfig'
+Plugin 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plugin 'sheerun/vim-polyglot'
 
 Plugin 'liuchengxu/vista.vim'
