@@ -82,6 +82,9 @@ Plugin 'jiangmiao/auto-pairs'
 " make surrounding words
 Plugin 'tpope/vim-surround'
 
+" Comment
+Plugin 'tpope/vim-commentary'
+
 " vim plugins for theming
 Plugin 'itchyny/lightline.vim'
 
