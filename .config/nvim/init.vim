@@ -192,6 +192,7 @@ require('telescope').setup{
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
+    -- make selected on top right below prompt
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     layout_defaults = {
@@ -242,6 +243,21 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " setting for yggdroot/indentline
 let g:indentLine_setColors=0
 let g:indentLine_char='┆'
+
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ }
+      \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 " Remove trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
