@@ -129,6 +129,7 @@ colorscheme gruvbox
 " or error message color will be white instead of red
 lua << EOF
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.intelephense.setup{}
 EOF
 
 " setup Telescope
