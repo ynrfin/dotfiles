@@ -27,8 +27,6 @@ Plugin 'itchyny/lightline.vim'
 
 Plugin 'altercation/Vim-colors-solarized'
 
-"" Snippet collection from Ultisnips example(recomendation)
-Plugin 'honza/vim-snippets'
 
 "Plugin 'Yggdroot/LeaderF'
 Plugin 'nvim-lua/popup.nvim'
@@ -49,6 +47,12 @@ Plugin 'neovim/nvim-lspconfig'
 Plugin 'kabouzeid/nvim-lspinstall'
 Plugin 'hrsh7th/nvim-compe'
 " Plugin 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+
+" Snippet
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 Plugin 'sheerun/vim-polyglot'
 
 " Better syntax higlighting
