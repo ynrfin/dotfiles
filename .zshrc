@@ -99,3 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Source(install ?) zsh keybinding & completion
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
