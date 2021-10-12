@@ -42,6 +42,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vimwiki/vimwiki'
 
 Plugin 'morhetz/gruvbox'
+Plugin 'arcticicestudio/nord-vim'
 
 "Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'neovim/nvim-lspconfig'
@@ -123,7 +124,7 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection ='0'
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 
 " Setup neovim-lspconfig
 " set termguicolors & colorscheme before initialise lsp
