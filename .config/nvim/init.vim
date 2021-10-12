@@ -46,13 +46,13 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'kabouzeid/nvim-lspinstall'
 Plugin 'hrsh7th/nvim-compe'
-" Plugin 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 
 " Snippet
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
 Plugin 'sheerun/vim-polyglot'
 
 " Better syntax higlighting
@@ -136,6 +136,7 @@ colorscheme nord
 lua << EOF
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.intelephense.setup{}
+require'lspconfig'.pyright.setup{}
 EOF
 
 " setup Telescope
@@ -149,10 +150,10 @@ require('telescope').setup{
       '--with-filename',
       '--line-number',
       '--column',
-      '--hidden',
-      '--smart-case'
+      '--smart-case',
+      '-u'
     },
-    prompt_position = "top",
+    -- prompt_position = "top",
     prompt_prefix = "> ",
     selection_caret = "> ",
     entry_prefix = "  ",
@@ -172,12 +173,11 @@ require('telescope').setup{
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
+    -- shorten_path = true,
     winblend = 0,
-    width = 0.75,
+    -- width = 0.75,
     preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
+    -- results_height = 1,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
@@ -231,6 +231,7 @@ autocmd BufWritePre * %s/\s\+$//e
 "autocmd BufNewFile,BufRead *.blade.php setlocal ft=blade
 "
 
+" nvim-compe config
 lua << EOF
 require'compe'.setup {
   enabled = true;
@@ -266,3 +267,9 @@ require'compe'.setup {
   };
 }
 EOF
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
