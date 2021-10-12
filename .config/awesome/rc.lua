@@ -14,9 +14,21 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+
+-- Customizationku
+
+-- volume control
+-- right-click choose output
+-- middle-click pavucontrol
+-- left-click mute
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+
+-- Brightness Control
+local brightness_widget = require('awesome-wm-widgets.brightness-widget.brightness')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -211,6 +223,12 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            brightness_widget{
+                type = 'icon_and_text',
+                program = "light",
+                step = 20,
+            },
+            volume_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -562,3 +580,4 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
