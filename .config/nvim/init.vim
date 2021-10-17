@@ -153,31 +153,32 @@ require('telescope').setup{
       '--smart-case',
       '-u'
     },
-    -- prompt_position = "top",
-    prompt_prefix = "> ",
     selection_caret = "> ",
+    prompt_prefix = "> ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
     -- make selected on top right below prompt
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
-    layout_defaults = {
+    layout_config = {
       horizontal = {
         mirror = false,
       },
       vertical = {
         mirror = false,
       },
+      preview_cutoff = 120,
+      -- height = 1,
+      prompt_position = "top",
     },
+    path_display = {
+      "absolute"
+    };
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    -- shorten_path = true,
     winblend = 0,
-    -- width = 0.75,
-    preview_cutoff = 120,
-    -- results_height = 1,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
