@@ -42,18 +42,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
 
-"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'neovim/nvim-lspconfig'
-Plugin 'kabouzeid/nvim-lspinstall'
-Plugin 'hrsh7th/nvim-compe'
-
-" Snippet
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-Plugin 'sheerun/vim-polyglot'
 
 " Better syntax higlighting
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -67,41 +56,27 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'ryanoasis/vim-devicons'
 
-Plugin 'jwalton512/vim-blade'
-Plugin 'mattn/emmet-vim'
 Plugin 'Yggdroot/indentLine'
 
 " All your plugins must be added before the following line
 call vundle#end()
-
-map <F3> :NERDTreeToggle<CR>
-map <S-F3> :NERDTreeRefreshRoot<CR>
-
-map <F8> :Vista!!<CR>
-
-" Ultisnips trigger config
-"let g:UltiSnipsExpandTrigger="<C-j>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-" this is not working yet
-"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-
-filetype plugin indent on
-
-"colorscheme solarized
 
 " set line number
 set number
 " enable backspace to delete fist line and go to previous line
 set backspace=2
 
-" Vimwiki
-let wiki_1 = {}
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
+syntax enable
 
-let g:vimwiki_list = [wiki_1]
-let g:vimwiki_global_ext = 0 " Make vim wiki only set filetype of markdown file inside wiki dir
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+set termguicolors
+
+filetype plugin indent on
+
+map <F3> :NERDTreeToggle<CR>
+map <S-F3> :NERDTreeRefreshRoot<CR>
+
+map <F8> :Vista!!<CR>
+
 
 let g:NERDTreeDirArrowExpandable = 'ﲖ'
 let g:NERDTreeDirArrowCollapsible = 'ﲔ'
@@ -111,16 +86,6 @@ let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-"make find to use ctrl p
-"map <C-p> :Leaderf file<CR>
-
-
-" Setup 'kabouzeid/nvim-lspinstall'
-lua << EOF
-EOF
-
-syntax enable
-set termguicolors
 let g:gruvbox_contrast_dark ='hard'
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -129,15 +94,7 @@ endif
 let g:gruvbox_invert_selection ='0'
 set background=dark
 colorscheme nord
-
-" Setup neovim-lspconfig
-" set termguicolors & colorscheme before initialise lsp
-" or error message color will be white instead of red
-lua << EOF
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.intelephense.setup{}
-require'lspconfig'.pyright.setup{}
-EOF
+"colorscheme solarized
 
 " setup Telescope
 lua << EOF
@@ -231,48 +188,3 @@ endfunction
 " Remove trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
 
-"autocmd BufNewFile,BufRead *.blade.php setlocal ft=blade
-"
-
-" nvim-compe config
-lua << EOF
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  resolve_timeout = 800;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = {
-    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
-    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-    max_width = 120,
-    min_width = 60,
-    max_height = math.floor(vim.o.lines * 0.3),
-    min_height = 1,
-  };
-
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-    ultisnips = true;
-    luasnip = true;
-  };
-}
-EOF
-
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
