@@ -55,12 +55,13 @@ Plugin 'neovim/nvim-lspconfig'
 Plugin 'hrsh7th/cmp-nvim-lsp'
 Plugin 'hrsh7th/nvim-cmp' " The Engine
 Plugin 'hrsh7th/cmp-buffer' " completion from current buffer
-Plugin 'hrsh7th/cmp-path' " completion for path
+Plugin 'hrsh7th/cmp-path' " completion for path /
 Plugin 'hrsh7th/cmp-cmdline' " completion on commandline :
 
 " For luasnip users.
 Plugin 'L3MON4D3/LuaSnip'
 Plugin 'saadparwaiz1/cmp_luasnip'
+Plugin 'rafamadriz/friendly-snippets'
 
 " Better syntax higlighting
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -167,6 +168,8 @@ lua << EOF
   }
 
 
+-- You can also use lazy loading so you only get in memory snippets of languages you use
+require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.vim/bundle/friendly-snippets"})
 
 -- setup Telescope
 require('telescope').setup{
