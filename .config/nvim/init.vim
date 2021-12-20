@@ -57,6 +57,7 @@ Plugin 'hrsh7th/nvim-cmp' " The Engine
 Plugin 'hrsh7th/cmp-buffer' " completion from current buffer
 Plugin 'hrsh7th/cmp-path' " completion for path /
 Plugin 'hrsh7th/cmp-cmdline' " completion on commandline :
+Plugin 'onsails/lspkind-nvim' " completion indicator
 
 " For luasnip users.
 Plugin 'L3MON4D3/LuaSnip'
@@ -111,6 +112,7 @@ lua << EOF
 -- setup nvim-cmp
 -- Setup nvim-cmp.
   local cmp = require'cmp'
+  local lspkind = require'lspkind'
 
   cmp.setup({
     snippet = {
@@ -135,7 +137,22 @@ lua << EOF
       { name = 'luasnip' }, -- For luasnip users.
     }, {
       { name = 'buffer' },
-    })
+    }),
+    experimental = {
+        ghost_text =true
+    },
+    formatting = {
+        -- with_text = true,
+        format = lspkind.cmp_format{
+            menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[snip]",
+                path = "[path]",
+            }
+        }
+    }
+
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
