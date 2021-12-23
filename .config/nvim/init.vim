@@ -120,7 +120,6 @@ lua << EOF
   -- vim.opt.listchars:append("space:⋅")
   require("bufferline").setup()
 -- setup nvim-cmp
--- Setup nvim-cmp.
   local cmp = require'cmp'
   local lspkind = require'lspkind'
 
@@ -142,9 +141,10 @@ lua << EOF
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
+    -- sources for completion
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'luasnip' },
     }, {
       { name = 'buffer' },
     }),
@@ -152,7 +152,7 @@ lua << EOF
         ghost_text =true
     },
     formatting = {
-        -- with_text = true,
+        with_text = true,
         format = lspkind.cmp_format{
             menu = {
                 buffer = "[buf]",
