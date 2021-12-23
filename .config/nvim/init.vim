@@ -41,6 +41,7 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'sainnhe/everforest'
 
 " Markdown folding
 Plugin 'godlygeek/tabular'
@@ -105,7 +106,8 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection ='0'
 set background=dark
-colorscheme nord
+colorscheme everforest
+"colorscheme nord
 "colorscheme solarized
 
 lua << EOF
