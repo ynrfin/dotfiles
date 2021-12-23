@@ -51,6 +51,9 @@ Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'Yggdroot/indentLine'
 
+" show buffer list
+Plugin 'akinsho/bufferline.nvim'
+
 " LSP plugins
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'hrsh7th/cmp-nvim-lsp'
@@ -111,6 +114,7 @@ colorscheme everforest
 "colorscheme solarized
 
 lua << EOF
+  require("bufferline").setup()
 -- setup nvim-cmp
 -- Setup nvim-cmp.
   local cmp = require'cmp'
