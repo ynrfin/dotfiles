@@ -62,6 +62,7 @@ Plugin 'hrsh7th/cmp-buffer' " completion from current buffer
 Plugin 'hrsh7th/cmp-path' " completion for path /
 Plugin 'hrsh7th/cmp-cmdline' " completion on commandline :
 Plugin 'onsails/lspkind-nvim' " completion indicator
+Plugin 'ray-x/lsp_signature.nvim' " function signature
 
 " For luasnip users.
 Plugin 'L3MON4D3/LuaSnip'
@@ -189,6 +190,11 @@ lua << EOF
   require('lspconfig')['gopls'].setup {
     capabilities = capabilities
   }
+
+  require("lsp_signature").setup({
+      bind = true,
+      floating_window=true
+  })
 
 
 -- You can also use lazy loading so you only get in memory snippets of languages you use
