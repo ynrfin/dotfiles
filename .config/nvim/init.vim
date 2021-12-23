@@ -115,6 +115,9 @@ colorscheme everforest
 "colorscheme solarized
 
 lua << EOF
+  vim.opt.list= true
+  vim.opt.listchars:append("eol:↴")
+  -- vim.opt.listchars:append("space:⋅")
   require("bufferline").setup()
 -- setup nvim-cmp
 -- Setup nvim-cmp.
