@@ -86,6 +86,8 @@ syntax enable
 
 set termguicolors
 
+nnoremap j jzz
+nnoremap G Gzz
 filetype plugin indent on
 set completeopt=menu,menuone,noselect
 
