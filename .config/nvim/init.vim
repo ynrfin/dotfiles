@@ -274,6 +274,12 @@ require('telescope').setup{
   }
 }
 
+-- setup nvim-treesitter
+require 'nvim-treesitter.configs'.setup {
+    higlight = {
+        enable = true
+    }
+}
 EOF
 
 " Find files using Telescope command-line sugar.
