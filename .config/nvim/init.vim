@@ -20,7 +20,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 
 " Comment
-Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-commentary'
+Plugin 'numToStr/Comment.nvim'
 
 " vim plugins for theming
 Plugin 'itchyny/lightline.vim'
@@ -121,6 +122,10 @@ lua << EOF
   vim.opt.listchars:append("eol:↴")
   -- vim.opt.listchars:append("space:⋅")
   require("bufferline").setup()
+
+  -- comment vim
+  require('Comment').setup()
+
 -- setup nvim-cmp
   local cmp = require'cmp'
   local lspkind = require'lspkind'
