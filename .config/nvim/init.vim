@@ -193,8 +193,22 @@ lua << EOF
   require('lspconfig')['pyright'].setup {
     capabilities = capabilities
   }
-  require('lspconfig')['gopls'].setup {
-    capabilities = capabilities
+  require'lspconfig'.gopls.setup{
+      -- on_attach => when gopls is attached
+       on_attach = function()
+        -- arg 3, dont call the function
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
+        -- where this var is defined
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
+        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0})
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+--         -- go to diagnostic errors
+        vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer=0})
+        vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_prev, {buffer=0})
+        vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostic<CR>", {buffer=0})
+--         -- rename var(or symbol??) by lsp. Works by understanding the code
+        vim.keymap.set("n", "<leader>xr", vim.lsp.buf.rename, {buffer=0})
+      end,
   }
 
   require("lsp_signature").setup({
