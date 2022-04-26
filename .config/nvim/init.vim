@@ -87,6 +87,11 @@ syntax enable
 
 set termguicolors
 
+" Tabstop determines how many columns a tab counts for.
+" Shiftwidth determines how many columns text is indented when using reindent operations.
+" Expandtab is what actually uses spaces instead of tabs.
+set tabstop=4 shiftwidth=4 expandtab
+
 nnoremap j jzz
 nnoremap G Gzz
 filetype plugin indent on
