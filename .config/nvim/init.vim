@@ -132,7 +132,7 @@ lua << EOF
   local luasnip = require'luasnip'
 
   cmp.setup({
-    snippet = {
+     snippet ={
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
@@ -234,12 +234,17 @@ lua << EOF
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
         vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0})
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
---         -- go to diagnostic errors
+         -- go to diagnostic errors
         vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer=0})
         vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_prev, {buffer=0})
         vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostic<CR>", {buffer=0})
---         -- rename var(or symbol??) by lsp. Works by understanding the code
-        vim.keymap.set("n", "<leader>xr", vim.lsp.buf.rename, {buffer=0})
+         -- rename var(or symbol??) by lsp. Works by understanding the code
+        vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
+
+        -- when called from command, it error, but if called here, its okay
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer=0})
+        -- command for code action
+        -- :lua vim.lsp.buf.code_action
       end,
   }
 
