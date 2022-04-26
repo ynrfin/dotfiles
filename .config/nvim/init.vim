@@ -26,7 +26,6 @@ Plugin 'numToStr/Comment.nvim'
 " vim plugins for theming
 Plugin 'itchyny/lightline.vim'
 
-Plugin 'altercation/Vim-colors-solarized'
 
 
 "Plugin 'Yggdroot/LeaderF'
@@ -40,11 +39,17 @@ Plugin 'junegunn/goyo.vim'
 
 Plugin 'vimwiki/vimwiki'
 
+Plugin 'altercation/Vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
-Plugin 'arcticicestudio/nord-vim'
+" Plugin 'arcticicestudio/nord-vim'
+Plugin 'shaunsingh/nord.nvim'
 Plugin 'sainnhe/everforest'
+Plugin 'rhysd/vim-color-spring-night'
 
-" Markdown folding
+" For diagnostic text color because everforest could not cope with it
+Plugin 'folke/lsp-colors.nvim'
+
+" Mar kdown folding
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
@@ -92,8 +97,10 @@ set termguicolors
 " Expandtab is what actually uses spaces instead of tabs.
 set tabstop=4 shiftwidth=4 expandtab
 
+
 nnoremap j jzz
 nnoremap G Gzz
+
 filetype plugin indent on
 set completeopt=menu,menuone,noselect
 
@@ -111,16 +118,18 @@ let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-let g:gruvbox_contrast_dark ='hard'
+let g:gruvbox_contrast_dark ='soft'
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 let g:gruvbox_invert_selection ='0'
-set background=dark
+" set background=dark
+" colorscheme gruvbox
 colorscheme everforest
-"colorscheme nord
-"colorscheme solarized
+let g:everforest_diagnostic_virtual_text = 'colored'
+" colorscheme nord
+" colorscheme solarized
 
 lua << EOF
   vim.opt.list= true
@@ -130,6 +139,13 @@ lua << EOF
 
   -- comment vim
   require('Comment').setup()
+
+  require("lsp-colors").setup({
+     Error = "#4e3e43",
+     Warning = "#4a4940",
+     Information = "#404d44",
+     Hint = "#394f5a"
+   })
 
 -- setup nvim-cmp
   local cmp = require'cmp'
