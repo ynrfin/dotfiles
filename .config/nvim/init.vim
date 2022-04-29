@@ -37,8 +37,6 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'junegunn/goyo.vim'
 
-Plugin 'vimwiki/vimwiki'
-
 Plugin 'altercation/Vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 " Plugin 'arcticicestudio/nord-vim'
