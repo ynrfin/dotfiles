@@ -33,6 +33,8 @@ Plugin 'nvim-lua/popup.nvim'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 
+Plugin 'ThePrimeagen/harpoon'
+
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'junegunn/goyo.vim'
@@ -290,6 +292,7 @@ require('telescope').setup{
       '--hidden',
       '-u'
     },
+    file_ignore_patterns = {".git"},
     selection_caret = "> ",
     prompt_prefix = "> ",
     entry_prefix = "  ",
@@ -313,7 +316,6 @@ require('telescope').setup{
       "absolute"
     };
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
     border = {},
