@@ -45,6 +45,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'shaunsingh/nord.nvim'
 Plugin 'sainnhe/everforest'
 Plugin 'rhysd/vim-color-spring-night'
+Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 
 " For diagnostic text color because everforest could not cope with it
 Plugin 'folke/lsp-colors.nvim'
@@ -338,6 +339,14 @@ require 'nvim-treesitter.configs'.setup {
         enable = true
     }
 }
+
+-- setup catppuccin
+local catppuccin = require("catppuccin")
+catppuccin.setup()
+
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.cmd[[colorscheme catppuccin]]
+
 EOF
 
 " Find files using Telescope command-line sugar.
