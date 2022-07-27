@@ -1,4 +1,8 @@
-source $HOME/.config/nvim/vim/settings.vim
+" Linux 
+" source $HOME/.config/nvim/vim/settings.vim
+
+" Windows
+source $HOME\AppData\Local\nvim\vim\settings.vim
 
 let g:markdown_folding=3
 
@@ -79,13 +83,15 @@ Plugin 'rafamadriz/friendly-snippets'
 " Better syntax higlighting
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
+Plugin 'ray-x/go.nvim'
+
 
 
 " All your plugins must be added before the following line
 call vundle#end()
 
 " set line number
-set number
+set number relativenumber
 " enable backspace to delete fist line and go to previous line
 set backspace=2
 
@@ -169,6 +175,7 @@ lua << EOF
       { name = 'path' },
     }),
     experimental = {
+        native_menu = false,
         ghost_text =true
     },
     formatting = {
@@ -181,6 +188,13 @@ lua << EOF
                 path = "[path]",
             }
         }
+    },
+    window = {
+        completion = {
+            border = 'rounded',
+            scrollbar = '║',
+        },
+        documentation = cmp.config.window.bordered(),
     },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -223,6 +237,7 @@ lua << EOF
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' },
       { name = 'path' }
@@ -231,6 +246,7 @@ lua << EOF
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
    cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
      sources = cmp.config.sources({
        { name = 'path' }
      }, {
@@ -259,7 +275,8 @@ lua << EOF
          -- go to diagnostic errors
         vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer=0})
         vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_prev, {buffer=0})
-        vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostic<CR>", {buffer=0})
+        vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", {buffer=0})
+        vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, {buffer=0})
          -- rename var(or symbol??) by lsp. Works by understanding the code
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
 
@@ -340,12 +357,18 @@ require 'nvim-treesitter.configs'.setup {
     }
 }
 
+-- setup go.nvim
+require('go').setup()
+-- Run gofmt + goimport on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+
+
 -- setup catppuccin
 local catppuccin = require("catppuccin")
 catppuccin.setup()
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-vim.cmd[[colorscheme catppuccin]]
+-- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+-- vim.cmd[[colorscheme catppuccin]]
 
 EOF
 
@@ -383,4 +406,3 @@ endfunction
 
 " Remove trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
-
