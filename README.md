@@ -6,6 +6,11 @@ Link `.config/nvim` not a init.vim
 
 ```
 ln -s /your/pc/home/.config/nvim /this/dotfile/.config/nvim
+
+# Run packer
+
+1. clone packer
+2. run :PackerInstall
 ```
 
 # Nvim LSP
