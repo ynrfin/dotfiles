@@ -156,7 +156,9 @@ require("lsp_signature").setup({
 
 
 -- You can also use lazy loading so you only get in memory snippets of languages you use
-require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.vim/bundle/friendly-snippets"})
+-- require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.vim/bundle/friendly-snippets"})
+require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/AppData/Local/nvim-data/site/pack/packer/start/friendly-snippets"})
+
 
 -- setup Telescope
 require('telescope').setup{
