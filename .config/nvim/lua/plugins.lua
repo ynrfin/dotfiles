@@ -24,6 +24,7 @@ require('packer').startup(function()
     use {'nvim-telescope/telescope.nvim', tag = "0.1.0", 
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+    use 'nvim-telescope/telescope-project.nvim'
 
     use 'ThePrimeagen/harpoon'
 
@@ -38,6 +39,7 @@ require('packer').startup(function()
     use 'sainnhe/everforest'
     use 'rhysd/vim-color-spring-night'
     use {'catppuccin/nvim', as= "catppuccin"}
+    use 'mhartington/oceanic-next'
 
     -- For diagnostic text color because everforest could not cope with it
     use 'folke/lsp-colors.nvim'
@@ -63,6 +65,7 @@ require('packer').startup(function()
     use 'onsails/lspkind-nvim' -- completion indicator
     use 'ray-x/lsp_signature.nvim' -- function signature
 
+    use { "williamboman/mason.nvim" }
     -- For luasnip users.
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
@@ -72,4 +75,5 @@ require('packer').startup(function()
     use {'nvim-treesitter/nvim-treesitter', run= ':TSUpdate'}  -- We recommend updating the parsers on update
 
     use 'ray-x/go.nvim'
+    use 'MaxMEllon/vim-jsx-pretty'
 end)

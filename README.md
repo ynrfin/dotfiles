@@ -6,11 +6,18 @@ Link `.config/nvim` not a init.vim
 
 ```
 ln -s /your/pc/home/.config/nvim /this/dotfile/.config/nvim
+```
 
 # Run packer
 
 1. clone packer
 2. run :PackerInstall
+
+# Install ripgrep for grep
+
+Windows
+```
+choco install ripgrep
 ```
 
 # Nvim LSP
@@ -51,28 +58,3 @@ or use manual link for precision
 `-s` for symbolic link instead of hard link
 **NOTE** when use `ln -s ` use absolute path for both source & target
 
-## Index
-What is contained in this repo:
-- Vim configuration `.vimrc`
-
-# How To Install Vim
-
-### 1. Link the vimrc & init.vim
-
-vimrc to -> `~/.vimrc`
-
-init.vim to -> `~/.config/nvim/.init.vim`
-
-### 3. Clone vundle
-
-`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-
-### 4. Install npm (if not already installed)
-
-`pacman -S npm`
-
-### 5. Install something on coc
-
-`:call coc#util#install()`
-
-done

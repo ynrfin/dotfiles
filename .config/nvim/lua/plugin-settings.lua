@@ -2,7 +2,7 @@
 vim.g.markdown_folding = 3
 
 vim.opt.list= true
-vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("eol:↵")
 -- vim.opt.listchars:append("space:⋅")
 require("bufferline").setup()
 
@@ -30,8 +30,8 @@ cmp.setup({
 },
 -- sources for completion
 sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lsp' },
 }, {
     { name = 'buffer' },
     { name = 'path' },
@@ -128,24 +128,24 @@ capabilities = capabilities
 require'lspconfig'.gopls.setup{
     -- on_attach => when gopls is attached
     on_attach = function()
-    -- arg 3, dont call the function
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-    -- where this var is defined
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-    vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0})
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+        -- arg 3, dont call the function
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
+        -- where this var is defined
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
+        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0})
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
         -- go to diagnostic errors
-    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer=0})
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_prev, {buffer=0})
-    vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", {buffer=0})
-    vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, {buffer=0})
+        vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer=0})
+        vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_prev, {buffer=0})
+        vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", {buffer=0})
+        vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, {buffer=0})
         -- rename var(or symbol??) by lsp. Works by understanding the code
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
+        vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
 
-    -- when called from command, it error, but if called here, its okay
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer=0})
-    -- command for code action
-    -- :lua vim.lsp.buf.code_action
+        -- when called from command, it error, but if called here, its okay
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer=0})
+        -- command for code action
+        -- :lua vim.lsp.buf.code_action
     end,
 }
 
@@ -154,72 +154,86 @@ require("lsp_signature").setup({
     floating_window=true
 })
 
+luasnip.filetype_extend("javascript", {"html"})
+luasnip.filetype_extend("javascriptreact", {"html"})
+luasnip.filetype_extend("typescriptreact", {"html"})
 
 -- You can also use lazy loading so you only get in memory snippets of languages you use
 -- require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.vim/bundle/friendly-snippets"})
 require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/AppData/Local/nvim-data/site/pack/packer/start/friendly-snippets"})
 
-
 -- setup Telescope
 require('telescope').setup{
-defaults = {
-vimgrep_arguments = {
-    'rg',
-    '--color=never',
-    '--no-heading',
-    '--with-filename',
-    '--line-number',
-    '--column',
-    '--smart-case',
-    '--hidden',
-    '-u'
-},
-file_ignore_patterns = {".git"},
-selection_caret = "> ",
-prompt_prefix = "> ",
-entry_prefix = "  ",
-initial_mode = "insert",
-selection_strategy = "reset",
--- make selected on top right below prompt
-sorting_strategy = "ascending",
-layout_strategy = "horizontal",
-layout_config = {
-    horizontal = {
-    mirror = false,
-    },
-    vertical = {
-    mirror = false,
-    },
-    preview_cutoff = 120,
-    -- height = 1,
-    prompt_position = "top",
-},
-path_display = {
-    "absolute"
-};
-file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-winblend = 0,
-border = {},
-borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-color_devicons = true,
-use_less = true,
-set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+    defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
+            '-u'
+        },
+        file_ignore_patterns = {".git"},
+        selection_caret = "> ",
+        prompt_prefix = "> ",
+        entry_prefix = "  ",
+        initial_mode = "insert",
+        selection_strategy = "reset",
+        -- make selected on top right below prompt
+        sorting_strategy = "ascending",
+        layout_strategy = "horizontal",
+        layout_config = {
+            horizontal = {
+            mirror = false,
+            },
+            vertical = {
+            mirror = false,
+            },
+            preview_cutoff = 120,
+            -- height = 1,
+            prompt_position = "top",
+        },
+        path_display = {
+            "absolute"
+        };
+        file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+        generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+        winblend = 0,
+        border = {},
+        borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+        color_devicons = true,
+        use_less = true,
+        set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
--- Developer configurations: Not meant for general override
-buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
-}
+        -- Developer configurations: Not meant for general override
+        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+    },
+    extensions = {
+        project  = {
+            base_dirs = {
+                'C:/Users/Asani/AppData/Local/nvim',
+                'D:/spe-projects',
+                'D:/projects',
+            }
+        }
+    }
+
 }
 
 -- setup nvim-treesitter
 require 'nvim-treesitter.configs'.setup {
-higlight = {
-    enable = true
+    higlight = {
+        enable = true
+    }
 }
-}
+
+require("mason").setup() 
 
 -- setup go.nvim
 require('go').setup()
@@ -228,8 +242,13 @@ vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').
 
 
 -- setup catppuccin
-local catppuccin = require("catppuccin")
-catppuccin.setup()
-
+-- local catppuccin = require("catppuccin")
+-- catppuccin.setup()
+--
 -- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
--- vim.cmd[[colorscheme catppuccin]]
+vim.cmd [[colorscheme everforest]]
+
+-- for problem on markdown where special characters is not shown
+vim.g.indentLine_fileTypeExclude = { 'markdown' }
+
+-- Setup harpoon

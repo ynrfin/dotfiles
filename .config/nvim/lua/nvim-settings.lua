@@ -60,3 +60,8 @@ o.termguicolors=true
 vim.cmd('colorscheme catppuccin')
 
 -- vim.api.nvim_set_keymap('n', '')
+
+
+-- soft break word. if a word is separated in 
+-- lines because it reached edge of window 
+vim.opt.linebreak = true
