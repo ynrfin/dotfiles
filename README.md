@@ -58,3 +58,23 @@ or use manual link for precision
 `-s` for symbolic link instead of hard link
 **NOTE** when use `ln -s ` use absolute path for both source & target
 
+
+# Windows
+
+### Symlink on windows
+
+Command below will create a symlink of your nvim config folder from your config in dotfiles dir to nvim config folder on `C:` drive
+
+1. Run cmd as Administrator
+2. execute
+```
+mklink /D "C:\Users\<username>\AppData\Local\nvim" "D:\projects\dotfiles\.config\nvim"
+```
+
+### Set nvim-qt font on windows
+
+```
+    set guifont=FuraMono\ NF:h12
+```
+
+**NOTE**: the `FuraMono\ NF` is obtained from the blue colored name when you list all window fonts
