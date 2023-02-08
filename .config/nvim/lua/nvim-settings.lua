@@ -57,7 +57,7 @@ w.number = true
 w.relativenumber =true 
 
 o.termguicolors=true
-vim.cmd('colorscheme catppuccin')
+-- vim.cmd('colorscheme catppuccin')
 
 -- vim.api.nvim_set_keymap('n', '')
 
@@ -65,3 +65,6 @@ vim.cmd('colorscheme catppuccin')
 -- soft break word. if a word is separated in 
 -- lines because it reached edge of window 
 vim.opt.linebreak = true
+
+-- set global statusline true
+vim.opt.laststatus = 3

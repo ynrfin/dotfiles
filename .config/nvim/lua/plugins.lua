@@ -13,8 +13,10 @@ require('packer').startup(function()
     -- Plugin 'tpope/vim-commentary'
     use 'numToStr/Comment.nvim'
 
-    -- vim plugins for theming
-    use 'itchyny/lightline.vim'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
 
 

@@ -252,3 +252,14 @@ vim.cmd [[colorscheme everforest]]
 vim.g.indentLine_fileTypeExclude = { 'markdown' }
 
 -- Setup harpoon
+-- Setup lualine
+require('lualine').setup{
+    theme = 'everforest',
+    globalstatus = true,
+    lualine_c = {
+        {
+            'filename', 
+            path = 1
+        }
+    }
+}
