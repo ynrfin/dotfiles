@@ -66,6 +66,14 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline' -- completion on commandline :
     use 'onsails/lspkind-nvim' -- completion indicator
     use 'ray-x/lsp_signature.nvim' -- function signature
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+        requires = { {"nvim-tree/nvim-web-devicons"} }
+    })
 
     use { "williamboman/mason.nvim" }
     -- For luasnip users.
