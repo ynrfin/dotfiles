@@ -254,12 +254,16 @@ vim.g.indentLine_fileTypeExclude = { 'markdown' }
 -- Setup harpoon
 -- Setup lualine
 require('lualine').setup{
-    theme = 'everforest',
-    globalstatus = true,
-    lualine_c = {
-        {
-            'filename', 
-            path = 1
+    options = {
+        theme = 'everforest',
+        globalstatus = true,
+    },
+    sections = { 
+        lualine_c = {
+            {
+                'filename', 
+                path = 1,
+            }
         }
     }
 }
